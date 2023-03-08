@@ -1,4 +1,4 @@
-//! **Rel**ation **tester** is a testing utility for checking the correctness of
+//! **Rel**ation **tester** is a small testing utility for automatically checking the correctness of
 //! [`PartialEq`], [`Eq`],
 //! [`PartialOrd`], and [`Ord`] implementations. It's most useful when used in
 //! conjuction with [`quickcheck`](https://github.com/BurntSushi/quickcheck) or
@@ -33,7 +33,7 @@
 //!    - [`reltester::partial_ord`](partial_ord) for [`PartialOrd`].
 //!
 //!    All of these functions take three arguments of the same type: `a`, `b`, and
-//! `c`. This is because up to three values are needed to test some invariants.
+//! `c`. This is because it takes up to three values are needed to test some invariants.
 //!
 //! ## Multi-type relations: `Foo: PartialEq<Bar>` and `Foo: PartialOrd<Bar>`
 //!
