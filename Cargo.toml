@@ -1,0 +1,15 @@
+[package]
+name = "reltester"
+version = "0.1.0"
+edition = "2018"
+repository = "https://github.com/neysofu/reltester"
+license = "MIT"
+description = "Automatically verify the correctness of [Partial]Eq/Ord implementations"
+authors = ["Filippo Neysofu Costa <filippo@neysofu.me>"]
+
+[dependencies]
+thiserror = "1.0.26"
+
+[dev-dependencies]
+quickcheck = "1.0"
+quickcheck_macros = "1.0"
