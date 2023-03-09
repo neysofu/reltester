@@ -23,7 +23,7 @@ This is what `reltester` is for. Rather than learning all subtle details of `Par
    - `reltester::partial_eq` for `PartialEq`;
    - `reltester::partial_ord` for `PartialOrd`.
 
-   All of these functions take three arguments of the same type: `a`, `b`, and `c`. This is because it takes up to three values are needed to test some invariants.
+   All of these functions take three arguments of the same type: `a`, `b`, and `c`. This is because it takes up to three values to test some invariants.
 
 ## Legal
 

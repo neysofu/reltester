@@ -33,7 +33,7 @@
 //!    - [`reltester::partial_ord`](partial_ord) for [`PartialOrd`].
 //!
 //!    All of these functions take three arguments of the same type: `a`, `b`, and
-//! `c`. This is because it takes up to three values are needed to test some invariants.
+//! `c`. This is because it takes up to three values to test some invariants.
 //!
 //! ## Multi-type relations: `Foo: PartialEq<Bar>` and `Foo: PartialOrd<Bar>`
 //!
