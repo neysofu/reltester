@@ -1,6 +1,6 @@
 # Reltester
 
-[![Crates.io](https://img.shields.io/crates/l/reltester)](https://github.com/neysofu/reltester/blob/main/LICENSE.txt) [![docs.rs](https://img.shields.io/docsrs/reltester)](https://docs.rs/crate/reltester/latest) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/neysofu/reltester/ci.yml)](https://github.com/neysofu/reltester/actions) [![Crates.io](https://img.shields.io/crates/v/reltester)](https://crates.io/crates/reltester)
+[![Crates.io](https://img.shields.io/crates/l/reltester)](https://github.com/neysofu/reltester/blob/main/LICENSE.txt) [![docs.rs](https://img.shields.io/docsrs/reltester)](https://docs.rs/reltester/latest/reltester/) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/neysofu/reltester/ci.yml)](https://github.com/neysofu/reltester/actions) [![Crates.io](https://img.shields.io/crates/v/reltester)](https://crates.io/crates/reltester)
 
 **Rel**ation **tester** is a small testing utility for automatically checking the correctness of `PartialEq`, `PartialOrd`, `Eq`, and `Ord` implementations. It's most useful when used in conjuction with [`quickcheck`](https://github.com/BurntSushi/quickcheck) or some other property-based testing framework.
 
