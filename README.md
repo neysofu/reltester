@@ -5,7 +5,7 @@
 **Rel**ation **tester** is a small testing utility for automatically checking the correctness of `PartialEq`, `PartialOrd`, `Eq`, and `Ord` implementations. It's most useful when used in conjuction with [`quickcheck`](https://github.com/BurntSushi/quickcheck) or some other property-based testing framework.
 
 
-*Go to the [docs](https://crates.io/crates/reltester)!*
+*Go to the [docs](https://docs.rs/reltester/latest/reltester/)!*
 
 ## Rationale
 
