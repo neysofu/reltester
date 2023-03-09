@@ -356,10 +356,9 @@ mod tests {
         partial_eq(&a, &b, &c).is_ok() && partial_ord(&a, &b, &c).is_ok()
     }
 
-    #[quickcheck]
-    #[should_panic]
-    fn f32_not_eq(a: f32) -> bool {
-        invariants::eq_reflexivity(&a).is_ok()
+    #[test]
+    fn f64_not_eq() {
+        assert!(invariants::eq_reflexivity(&f64::NAN).is_err());
     }
 
     #[quickcheck]
