@@ -25,6 +25,23 @@ This is what `reltester` is for. Rather than learning all subtle details of `Par
 
    All of these functions take three arguments of the same type: `a`, `b`, and `c`. This is because it takes up to three values to test some invariants.
 
+Please refer to the documentation for more advanced use cases.
+
+# A small example
+
+```rust
+use reltester;
+use quickcheck_macros::quickcheck;
+
+#[quickcheck]
+fn test_f32(a: f32, b: f32, c: f32) -> bool {
+    // Let's check if `f32` implements `PartialEq` and `PartialOrd` correctly
+    // (spoiler: it does)
+    reltester::partial_eq(&a, &b, &c).is_ok()
+        && reltester::partial_ord(&a, &b, &c).is_ok()
+}
+```
+
 ## Legal
 
 Reltester is available under the terms of the MIT license.
