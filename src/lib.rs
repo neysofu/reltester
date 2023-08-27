@@ -21,7 +21,7 @@
 //! [others](https://doc.rust-lang.org/std/hash/trait.Hash.html#prefix-collisions)
 //! which are not. It's especially common for less-than-perfect implementations
 //! of the [`std::iter`] family of traits to introduce off-by-one
-//! bugs[^1][^2][^3][^4] among others.
+//! bugs[^1] [^2] [^3] [^4] among others.
 //!
 //! The idea is, instead of keeping these invariants in your head whenever you
 //! go about manually implementing one of these traits in your codebase, you can
@@ -128,7 +128,7 @@
 //!   though it's generally understood to mean [strict partial
 //!   order](https://en.wikipedia.org/wiki/Partially_ordered_set#Strict_partial_orders).
 //! - [`Ord`] requires **symmetry** and **reflexivity** of `==`; **transitivity** of `>`, `==`, and `<`; and **duality** of `>` and `<`.
-//!   `==`; **transitivity** and **duality** of `>` and `<`; and must be **trichotomous**[^1]. Just like
+//!   `==`; **transitivity** and **duality** of `>` and `<`; and must be **trichotomous**[^5]. Just like
 //!   [`PartialOrd`], the mathematical definition of [`Ord`] is a bit open to
 //!   interpretation, though it's generally understood to mean [total
 //!   order](https://en.wikipedia.org/wiki/Total_order#Strict_and_non-strict_total_orders).
@@ -137,7 +137,16 @@
 //! [`PartialOrd::lt`] or [`Ord::max`]) must have the same behavior as the
 //! default implementations. `reltester` always checks these for you.
 //!
-//! [^1]: Trichotomy is a corollary that follows from the definitions of `>`,
+//!
+//! [^1]: <https://github.com/rust-lang/rust/issues/41964>
+//!
+//! [^2]: <https://github.com/bevyengine/bevy/pull/7469>
+//!
+//! [^3]: <https://github.com/bluejekyll/trust-dns/issues/1638>
+//!
+//! [^4]: <https://github.com/sparsemat/sprs/issues/261>
+//!
+//! [^5]: Trichotomy is a corollary that follows from the definitions of `>`,
 //! `==`, and `<` based on [`Ordering`](std::cmp::Ordering).
 
 #![allow(clippy::eq_op, clippy::double_comparisons)]
