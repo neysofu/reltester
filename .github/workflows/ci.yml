@@ -22,5 +22,6 @@ jobs:
   msrv:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: cargo install cargo-msrv
       - run: cargo msrv verify
