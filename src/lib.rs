@@ -198,7 +198,7 @@ where
 
 /// Checks the correctness of the [`PartialEq`] trait
 /// for some values.
-pub fn partial_eq<T>(a: &T, b: &T, c: &T) -> Result<(), Error>
+pub fn partial_eq<T>(a: &T, b: &T, c: &T) -> Result<(), PartialEqError>
 where
     T: PartialEq,
 {
@@ -211,7 +211,7 @@ where
 
 /// Checks the correctness of the [`Hash`] trait in relation to [`Eq`] for some
 /// values.
-pub fn hash<K>(a: &K, b: &K) -> Result<(), Error>
+pub fn hash<K>(a: &K, b: &K) -> Result<(), HashError>
 where
     K: Hash + Eq + ?Sized,
 {
@@ -240,7 +240,7 @@ where
 /// [`Iterator`] by extension) for some value `iter`.
 ///
 /// Note that `iter` must be a finite iterator.
-pub fn double_ended_iterator<I>(iter: I) -> Result<(), Error>
+pub fn double_ended_iterator<I>(iter: I) -> Result<(), IteratorError>
 where
     I: DoubleEndedIterator + Clone,
     I::Item: PartialEq,
@@ -256,7 +256,7 @@ where
 /// [`Iterator`] by extension) for some value `iter`.
 ///
 /// Note that `iter` must be a finite iterator.
-pub fn fused_iterator<I>(iter: I) -> Result<(), Error>
+pub fn fused_iterator<I>(iter: I) -> Result<(), IteratorError>
 where
     I: FusedIterator + Clone,
     I::Item: PartialEq,
