@@ -98,10 +98,9 @@
 //!
 //! #[quickcheck]
 //! fn test_vec_u32(nums: Vec<u32>) -> bool {
-//!     reltester::eq(nums.clone()).is_ok()
-//!         // `Iterator` is implied and checked by both `DoubleEndedIterator` and
-//!         // `FusedIterator`.
-//!         && reltester::double_ended_iterator(nums.iter()).is_ok()
+//!     // `Iterator` is implied and checked by both `DoubleEndedIterator` and
+//!     // `FusedIterator`.
+//!     reltester::double_ended_iterator(nums.iter()).is_ok()
 //!         && reltester::fused_iterator(nums.iter()).is_ok()
 //! }
 //! ```
