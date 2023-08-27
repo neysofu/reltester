@@ -1,15 +1,19 @@
 [package]
 name = "reltester"
 version = "1.0.1"
-edition = "2018"
+edition = "2021"
 repository = "https://github.com/neysofu/reltester"
 license = "MIT"
+rust-version = "1.56"
 description = "Automatically verify the correctness of [Partial]Eq/Ord implementations"
 authors = ["Filippo Neysofu Costa <filippo@neysofu.me>"]
 
 [dependencies]
-thiserror = "1.0.26"
+rand = "0.8"
+thiserror = "1"
 
 [dev-dependencies]
-quickcheck = "1.0"
-quickcheck_macros = "1.0"
+quickcheck = "1"
+quickcheck_macros = "1"
+proptest = "1"
+proptest-derive = "0.3"
