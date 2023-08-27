@@ -23,5 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cargo install cargo-msrv
+      - name: install cargo-binstall
+        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+      - run: cargo binstall --version 0.15.1 --no-confirm cargo-msrv
       - run: cargo msrv verify
