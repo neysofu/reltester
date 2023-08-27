@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 env:
   CARGO_TERM_COLOR: always
@@ -13,10 +13,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: cargo build --verbose
-    - name: Run cargo clippy
-      run: cargo clippy
-    - name: Run tests
-      run: cargo test --verbose
+      - uses: actions/checkout@v2
+      - run: cargo check --verbose
+      - run: cargo clippy
+      - run: cargo test --verbose
+      - run: cargo test --examples
+      - run: cargo test --doc
+  msrv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install cargo-binstall
+        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+      - run: cargo binstall --version 0.15.1 --no-confirm cargo-msrv
+      - run: cargo msrv verify
