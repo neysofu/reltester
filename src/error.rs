@@ -129,7 +129,7 @@ pub enum IteratorError {
     FusedIteratorReturnedSomeAfterExhaustion,
 }
 
-/// Represents a broken invariant of a tested trait implementation.
+/// The crate error type.
 #[derive(Error, Debug, Clone)]
 #[non_exhaustive]
 pub enum Error {

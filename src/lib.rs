@@ -16,7 +16,7 @@
 //! implementing. For example, if you implement [`PartialEq`] for `Foo`, you must
 //! guarantee that `foo1 == foo2` implies `foo2 == foo1` (*symmetry*).
 //!
-//! Other traits such as [`Hash`] and [`Iterator`] mandate several invariants as
+//! Other traits such as [`Hash`] and [`Iterator`] mandate their own invariants as
 //! well – some of which are very intuitive, and
 //! [others](https://doc.rust-lang.org/std/hash/trait.Hash.html#prefix-collisions)
 //! which are not. It's especially common for less-than-perfect implementations
@@ -50,6 +50,9 @@
 //!    Some of these functions take multiple (two or three) values of the same
 //!    type. This is because it takes up to three values to test some
 //!    invariants.
+//!
+//! The [`reltester::invariants`](invariants) module is available for more
+//! granular checks if you can't satisfy the type bounds of the main functions.
 //!
 //! ## Multi-type relations: `Foo: PartialEq<Bar>` and `Foo: PartialOrd<Bar>`
 //!
