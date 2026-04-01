@@ -23,7 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: install cargo-binstall
-        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-      - run: cargo binstall --version 0.15.1 --no-confirm cargo-msrv
+      - name: install cargo-msrv
+        # cargo-msrv 0.15.1 no longer builds reliably with an unlocked dependency
+        # graph because indicatif 0.16.2 can now resolve console 0.16.x without
+        # the std feature. Installing with --locked keeps the crate's published
+        # dependency set stable in CI.
+        run: cargo install --locked cargo-msrv --version 0.15.1
       - run: cargo msrv verify
